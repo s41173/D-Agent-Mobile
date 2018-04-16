@@ -1,6 +1,6 @@
-var api = "http://calculator.dswip.com/";    
+var api = "http://calculator.dswip.com/";  
 
-function otentikasi(){
+function otentikasi(param=6000){
     
     $(document).ready(function(){  
         
@@ -24,7 +24,7 @@ function otentikasi(){
             })
             return false; 
 
-            }, 6000);
+            }, param);
 
     }); // end document ready
 
