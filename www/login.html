@@ -66,7 +66,7 @@
                     localStorage.setItem("log", data.log);
                     window.location = "index.html";
 				}
-				else{ swal(data.error, "", "error"); }
+				else{ alert(data.error); }
 			},
 			error: function(e) 
 	    	{
