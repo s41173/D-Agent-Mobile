@@ -1,4 +1,4 @@
-# Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
+# Delica Quotes Calculator [![bitHound Score][bithound-img]][bithound-url]
 
 Delica Quotes Calculator Application
 
