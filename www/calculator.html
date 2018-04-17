@@ -35,6 +35,17 @@ $(document).ready(function(){
             add_cart();
         }else{ alert("Invalid Amount..!"); }
     });
+    
+    $(document).on('keydown','#tdesc',function(e)
+    {	
+        var datax = "";
+        if (e.keyCode == 13) {
+          e.preventDefault();    
+          datax = datax+$(this).val()+" - ";    
+          $(this).val(datax);
+        }
+    });
+
 
 }); // end document ready
         
@@ -49,7 +60,8 @@ $(document).ready(function(){
     var glasstype = $("#cglasstype").val();
     var glassid = $("#cglass").val();
     var kusen = $("#csills").val();
-    var desc = $("#tdesc").val();
+    var xdesc = $("#tdesc").val();
+    var desc = xdesc.replace(/^\s+|\s+$/g, '');
     
     var attribute = width+'|'+height+'|'+heightkm+'|'+heightkm1+'|'+color+'|'+glasstype+'|'+glassid+'|'+kusen;
     var pid = localStorage.getItem("pid");
@@ -89,10 +101,10 @@ $(document).ready(function(){
                     $("#tdesc").val('');
 //                    load_cart();
                 }
-                else{ swal('Failed to added cart!', "", "error"); }
+                else{ swal('Failed to added cart!', data.error, "error"); console.log(desc); }
             },
             error: function (request, status, error) {
-                swal('Request Failed...!', "", "error");
+                swal('Request Failed...!', '', "error");
             }
         })
         return false;

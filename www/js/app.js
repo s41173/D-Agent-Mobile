@@ -165,7 +165,8 @@ $('#submit').click(function() {
               }
             },
             error: function (request, status, error) {
-                alert('Request Failed...! '+error);
+//                alert('Request Failed Category...!'+error);
+                console.log('Request Failed Category...!');
             }
         }) 
         return false;
@@ -200,7 +201,7 @@ var con = "<a onclick=\"product("+datax[i].id+",'"+datax[i].name+"');\" href=\"#
               }
             },
             error: function (request, status, error) {
-                alert('Request Failed...! - '+error);
+                alert('Request Failed Get Series...! - '+error);
             }
         }) 
         return false;
@@ -248,7 +249,7 @@ var con = "<a onclick=\"calculator("+datax[i].id+");\" href=\"#\" class=\"list-g
 
             },
             error: function (request, status, error) {
-                alert('Request Failed...!');
+                alert('Request Failed Get Product...!');
             }
         }) 
         return false;
@@ -283,7 +284,7 @@ combo_color(pid);
 
          },
          error: function (request, status, error) {
-             alert('Request Failed...!');
+             alert('Request Failed Get Product Details...!');
          }
      }) 
      return false;
