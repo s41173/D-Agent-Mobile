@@ -116,7 +116,7 @@ $('#submit').click(function() {
                     var datax = data.content;
                
  con = "<tr> <td class=\"text-center\">"+datax[i].no+"</td> <td>"+datax[i].name+"</td> <td class=\"text-center\">"+datax[i].size+" m <sup>2</sup> </td> <td class=\"text-right\">"+datax[i].amount+"</td> </tr>"; 
-  $("#material_table").append(con);
+//  $("#material_table").append(con);
                 }
 
             $("#htotal").html(data.total);
