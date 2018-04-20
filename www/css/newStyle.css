@@ -5,6 +5,7 @@
     position: fixed;
     bottom: 0;
     box-shadow: 0 0 1px #000;
+    text-align: center
 
 }
 .menu-tab>li{
@@ -12,7 +13,15 @@
     margin: 0 auto;
     margin-left: 0 !important;
     display: inline-block;
+    font-size: 10pt;
 }
+@media(max-width:320px) {
+    .menu-tab>li {
+        width :24%;
+        font-size: 8pt!important;
+    }
+}
+
 .menu-tab>li a {
     display: block;
     margin: 0 auto;
