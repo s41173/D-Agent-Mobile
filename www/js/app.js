@@ -125,7 +125,7 @@ $('#submit').click(function() {
 
         },
         error: function (request, status, error) {
-            alert('Request Failed...!');
+            alert('Request Failed Calculator...!');
         }
     })
     return false;
@@ -422,7 +422,7 @@ function remove_cart(val){
             }else{ swal(data.error, "", "error"); }
         },
         error: function (request, status, error) {
-            alert('Request Failed...!');
+            alert('Request Failed - Remove Cart...!');
         }
     }) 
     return false;
@@ -473,7 +473,7 @@ function transaction(type=0,limit=10,storage=0){
             }
         },
         error: function (request, status, error) {
-            alert('Request Failed...!');
+            alert('Request Failed Get Transaction...!');
         }
     }) 
     return false; 
