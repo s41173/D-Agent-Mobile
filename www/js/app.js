@@ -1,5 +1,12 @@
 var api = "http://calculator.dswip.com/";  
 
+function logout(){
+    localStorage.removeItem("username");
+    localStorage.removeItem("userid");
+    localStorage.removeItem("log");
+    window.location = "login.html";
+}
+
 $(document).ready(function (e) {  
 
 

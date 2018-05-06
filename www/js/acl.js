@@ -28,13 +28,4 @@ function otentikasi(){
 
 }
 
-
-function logout(){
-    localStorage.removeItem("username");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("log");
-    window.location = "login.html";
-}
-
-
 // ----------------------------- acl --------------------------------------------------------
