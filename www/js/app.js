@@ -1,5 +1,9 @@
 var api = "http://calculator.dswip.com/";  
 
+function dodolx(){
+    alert("Hallo saya dodol");
+}
+
 function otentikasi(param=6000){
     
     $(document).ready(function(){  
