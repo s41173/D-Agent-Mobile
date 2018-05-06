@@ -22,30 +22,28 @@
 //        var api = "http://calculator.dswip.com/";  
 
 //        setInterval(otentikasi, 3000);
-        function otentikasi(){
 
-            $(document).ready(function(){  
+        $(document).ready(function(){  
 
-                    var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
-                    $.ajax({
-                        type: 'POST',
-                        url: api+'agent/otentikasi',
-                        data : nilai,
-                        contentType: "application/json",
-                        dataType: 'json',
-                        success: function(data)
-                        {   
-                          if (data.status == false){ logout(); }
-                          else if (data.status == true){ category(7); category(16); }
-                        },
-                        error: function (request, status, error) {
-                            console.log('Request Failed...!'+error);
-                        }
-                    })
-                    return false; 
+                var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
+                $.ajax({
+                    type: 'POST',
+                    url: api+'agent/otentikasi',
+                    data : nilai,
+                    contentType: "application/json",
+                    dataType: 'json',
+                    success: function(data)
+                    {   
+                      if (data.status == false){ logout(); }
+                      else if (data.status == true){ category(7); category(16); }
+                    },
+                    error: function (request, status, error) {
+                        console.log('Request Failed...!'+error);
+                    }
+                })
+                return false; 
 
-            }); // end document ready
-        }
+        }); // end document ready
         
     </script>
     
@@ -53,7 +51,7 @@
     
 </head>
 <!--<body id="index" onload="category(7); category(16);">-->
- <body id="index" onload="otentikasi();">
+ <body id="index">
   
      <header>
         <nav class="navbar navbar-inverse">
