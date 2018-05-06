@@ -4,30 +4,28 @@ var api = "http://calculator.dswip.com/";
 //     alert("Hello World");
 // }  
 
-setInterval(otentikasi, 2000);
+setInterval(otentikasi, 3000);
 function otentikasi(){
     
     $(document).ready(function(){  
-    
-        alert("ini muncul setelah 3 detik");
             
-        //     // var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
-        //     // $.ajax({
-        //     //     type: 'POST',
-        //     //     url: api+'agent/otentikasi',
-        //     //     data : nilai,
-        //     //     contentType: "application/json",
-        //     //     dataType: 'json',
-        //     //     success: function(data)
-        //     //     {   
-        //     //       if (data.status == false){ logout(); }
-        //     //     },
-        //     //     error: function (request, status, error) {
-        //     //         alert('Request Failed...!', error, "error");
-        //     //         console.log('Request Failed...!'+error);
-        //     //     }
-        //     // })
-        //     // return false; 
+            var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
+            $.ajax({
+                type: 'POST',
+                url: api+'agent/otentikasi',
+                data : nilai,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function(data)
+                {   
+                  if (data.status == false){ logout(); }
+                },
+                error: function (request, status, error) {
+                    alert('Request Failed...!', error, "error");
+                    console.log('Request Failed...!'+error);
+                }
+            })
+            return false; 
 
 
     }); // end document ready
