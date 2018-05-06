@@ -18,7 +18,7 @@ function otentikasi(param=6000){
                   if (data.status == false){ logout(); }
                 },
                 error: function (request, status, error) {
-                    // alert('Request Failed...!', error, "error");
+                    alert('Request Failed...!', error, "error");
                     console.log('Request Failed...!'+error);
                 }
             })
