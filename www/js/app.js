@@ -1,8 +1,8 @@
 var api = "http://calculator.dswip.com/";  
 
-function dodolx(){
-    alert("Hallo saya dodol");
-}
+function helloword(){
+    alert("Hello World");
+}  
 
 function otentikasi(param=6000){
     
