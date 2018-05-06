@@ -4,12 +4,12 @@ var api = "http://calculator.dswip.com/";
 //     alert("Hello World");
 // }  
 
+setInterval(otentikasi, 2000);
 function otentikasi(){
     
     $(document).ready(function(){  
     
         alert("ini muncul setelah 3 detik");
-        // setInterval(function(){ 
             
         //     // var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
         //     // $.ajax({
@@ -29,7 +29,6 @@ function otentikasi(){
         //     // })
         //     // return false; 
 
-        //     }, param);
 
     }); // end document ready
 
