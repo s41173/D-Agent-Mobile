@@ -9,24 +9,26 @@ function otentikasi(){
         // var log = localStorage.getItem("log");
             
         var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
-        alert(nilai);
-        // $.ajax({
-        //     type: 'POST',
-        //     url: api+'agent/otentikasi',
-        //     data : nilai,
-        //     contentType: "application/json",
-        //     dataType: 'json',
-        //     success: function(data)
-        //     {   
-        //       if (data.status == false){ logout(); }
-        //       else if (data.status == true){ category(7); category(16); }
-        //     },
-        //     error: function (request, status, error) {
-        //         console.log('Request Failed...!'+error);
-        //         alert('Request Failed Otentikasi...! - '+error);
-        //     }
-        // })
-        // return false;
+        $.ajax({
+            type: 'POST',
+            url: api+'agent/otentikasi',
+            data : nilai,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function(data)
+            {   
+                alert(data.status);
+            //   if (data.status == false){ logout(); }
+            //   else if (data.status == true){ category(7); category(16); }
+            },
+            error: function (request, status, error) {
+                console.log('Request Failed...!'+error);
+                alert('Request Failed Otentikasi Request...! - '+request.responseText);
+                alert('Request Failed Otentikasi Status...! - '+error);
+                alert('Request Failed Otentikasi Error...! - '+status);
+            }
+        })
+        return false;
 
     }); // end document ready
 
