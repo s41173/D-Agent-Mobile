@@ -93,7 +93,7 @@ $('#submit').click(function() {
 
 });  // end document ready	
    
- function category(param){
+ function xcategory(param){
        
     alert("Saya adalah function category");
     alert(api);
@@ -136,7 +136,7 @@ $('#submit').click(function() {
         
 //     });  // end document ready	
        
-   }
+}
 
  function get_series(){
        
