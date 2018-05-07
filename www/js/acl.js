@@ -1,11 +1,11 @@
-// var api = "http://calculator.dswip.com/";  
+var api = "http://calculator.dswip.com/";  
 
 // setInterval(otentikasi, 3000);
 function otentikasi(){
     
     $(document).ready(function(){  
             
-        alert("saya adalah otentikasi");
+        alert(api);
         // var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
         // $.ajax({
         //     type: 'POST',
