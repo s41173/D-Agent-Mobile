@@ -18,7 +18,7 @@ function otentikasi(){
             success: function(data)
             {   
               if (data.status == false){ logout(); }
-              else if (data.status == true){ alert("panggil function category"); category(7); /* category(16); */ }
+              else if (data.status == true){ categorix(); /* category(16); */ }
             },
             error: function (request, status, error) {
                 console.log('Request Failed...!'+error);
