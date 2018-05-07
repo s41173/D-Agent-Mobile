@@ -19,6 +19,7 @@ function otentikasi(){
             },
             error: function (request, status, error) {
                 console.log('Request Failed...!'+error);
+                alert('Request Failed Otentikasi...! - '+error);
             }
         })
         return false;
