@@ -17,7 +17,6 @@ function otentikasi(){
             dataType: 'json',
             success: function(data)
             {   
-              alert(data.status);
               if (data.status == false){ logout(); }
               else if (data.status == true){ category(7); category(16); }
             },
@@ -40,7 +39,7 @@ function logout(){
     // localStorage.removeItem("username");
     // localStorage.removeItem("userid");
     // localStorage.removeItem("log");
-    // window.location = "login.html";
+    window.location = "login.html";
 }
 
 // ----------------------------- acl --------------------------------------------------------
