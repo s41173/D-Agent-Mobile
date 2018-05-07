@@ -17,9 +17,9 @@ function otentikasi(){
             dataType: 'json',
             success: function(data)
             {   
-                alert(data.status);
-            //   if (data.status == false){ logout(); }
-            //   else if (data.status == true){ category(7); category(16); }
+              alert(data.status);
+              if (data.status == false){ logout(); }
+              else if (data.status == true){ category(7); category(16); }
             },
             error: function (request, status, error) {
                 console.log('Request Failed...!'+error);
@@ -32,6 +32,15 @@ function otentikasi(){
 
     }); // end document ready
 
+}
+
+function logout(){
+
+    alert('saya function logout');
+    // localStorage.removeItem("username");
+    // localStorage.removeItem("userid");
+    // localStorage.removeItem("log");
+    // window.location = "login.html";
 }
 
 // ----------------------------- acl --------------------------------------------------------
