@@ -36,9 +36,9 @@ function otentikasi(){
 function logout(){
 
     alert('saya function logout');
-    // localStorage.removeItem("username");
-    // localStorage.removeItem("userid");
-    // localStorage.removeItem("log");
+    localStorage.removeItem("username");
+    localStorage.removeItem("userid");
+    localStorage.removeItem("log");
     window.location = "login.html";
 }
 
