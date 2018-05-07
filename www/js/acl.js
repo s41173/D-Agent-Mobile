@@ -35,7 +35,6 @@ function otentikasi(){
 
 function logout(){
 
-    alert('saya function logout');
     localStorage.removeItem("username");
     localStorage.removeItem("userid");
     localStorage.removeItem("log");

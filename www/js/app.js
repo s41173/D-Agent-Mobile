@@ -2,7 +2,6 @@ var api = "http://calculator.dswip.com/";
 
 $(document).ready(function (e) {  
 
-
     $(document).on('keyup','.qtytext',function(e)
     {	
         e.preventDefault();
@@ -105,6 +104,7 @@ $('#submit').click(function() {
     $(document).ready(function (e) {   
     
         var nilai = '{ "id":"'+param+'"}';
+        alert(api+" : "+nilai);
         
         $.ajax({
             type: 'POST',
@@ -125,7 +125,7 @@ $('#submit').click(function() {
               }
             },
             error: function (request, status, error) {
-//                alert('Request Failed Category...!'+error);
+               alert('Request Failed Category...!'+error);
                 console.log('Request Failed Category...!');
             }
         }) 
