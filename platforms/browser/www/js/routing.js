@@ -7,7 +7,19 @@ document.addEventListener('deviceready', function () {
       
    if(bodyId == 'index'){
        e.preventDefault();
-       navigator.app.exitApp();
+       
+       navigator.notification.confirm('Press back again to exit'
+                    , function(button) {
+                        if (button == 2 || button == 0) {
+                            navigator.app.exitApp();
+                        }
+                      }
+                    , 'Exit App?'
+                    , ['No way', 'Exit']
+                );
+                return false;
+       
+//       navigator.app.exitApp();
    }
 //   else if (bodyId == 'product'){ window.location.href = "series.html";  }
 //   else if (bodyId == 'calculator'){ window.location.href = "product.html";  }

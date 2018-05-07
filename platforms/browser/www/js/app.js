@@ -1,47 +1,6 @@
 var api = "http://calculator.dswip.com/";  
 
-function otentikasi(param=6000){
-    
-    $(document).ready(function(){  
-        
-        setInterval(function(){ 
-            
-            var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
-            $.ajax({
-                type: 'POST',
-                url: api+'agent/otentikasi',
-                data : nilai,
-                contentType: "application/json",
-                dataType: 'json',
-                success: function(data)
-                {   
-                  if (data.status == false){ logout(); }
-                },
-                error: function (request, status, error) {
-                    // alert('Request Failed...!', error, "error");
-                    console.log('Request Failed...!'+error);
-                }
-            })
-            return false; 
-
-            }, param);
-
-    }); // end document ready
-
-}
-
-function logout(){
-    localStorage.removeItem("username");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("log");
-    window.location = "login.html";
-}
-
-
-// ----------------------------- acl --------------------------------------------------------
-
 $(document).ready(function (e) {  
-
 
     $(document).on('keyup','.qtytext',function(e)
     {	
@@ -125,7 +84,7 @@ $('#submit').click(function() {
 
         },
         error: function (request, status, error) {
-            alert('Request Failed...!');
+            alert('Request Failed Calculator...!');
         }
     })
     return false;
@@ -136,41 +95,46 @@ $('#submit').click(function() {
    
  function category(param){
        
+    alert("Saya adalah function category");
+    alert(api);
+
     localStorage.removeItem("category");
     localStorage.removeItem("catname");
     localStorage.removeItem("model");
     localStorage.removeItem("modelname");
     localStorage.removeItem("pid");
        
-    $(document).ready(function (e) {   
+//     $(document).ready(function (e) {   
     
-        var nilai = '{ "id":"'+param+'"}';
+//         var nilai = '{ "id":"'+param+'"}';
+//         alert(api+" : "+nilai);
         
-        $.ajax({
-            type: 'POST',
-            url: api+'api/category/',
-            data : nilai,
-            contentType: "application/json",
-            dataType: 'json',
-            success: function(data) 
-            {
-              for (i=0; i<data.content.length; i++){
-//                  alert(data.content[i].name.toUpperCase());
-                  var datax = data.content;
-                  var con = "<div class=\"col-xs-4\"> <div class=\"thumbnail shadow\">"+
-"<a onclick=\"series("+datax[i].id+",'"+datax[i].name+"');\" href=\"#\"> <img class=\"img-responsive\" id=\"pict\" src=\""+datax[i].image+"\" alt=\"\"> </a>"+
-                            "<div class=\"caption\"> <h5 class=\"judul strong\"> "+datax[i].name.toUpperCase()+" </h5>"+
-                            "</div> </div> </div>";
-                  if (param == 7){ $("#doorbox").append(con); }else{ $("#windowbox").append(con); }
-              }
-            },
-            error: function (request, status, error) {
-                alert('Request Failed...! '+error);
-            }
-        }) 
-        return false;
+//         $.ajax({
+//             type: 'POST',
+//             url: api+'api/category/',
+//             data : nilai,
+//             contentType: "application/json",
+//             dataType: 'json',
+//             success: function(data) 
+//             {
+//               for (i=0; i<data.content.length; i++){
+// //                  alert(data.content[i].name.toUpperCase());
+//                   var datax = data.content;
+//                   var con = "<div class=\"col-xs-4\"> <div class=\"thumbnail shadow\">"+
+// "<a onclick=\"series("+datax[i].id+",'"+datax[i].name+"');\" href=\"#\"> <img class=\"img-responsive\" id=\"pict\" src=\""+datax[i].image+"\" alt=\"\"> </a>"+
+//                             "<div class=\"caption\"> <h5 class=\"judul strong\"> "+datax[i].name.toUpperCase()+" </h5>"+
+//                             "</div> </div> </div>";
+//                   if (param == 7){ $("#doorbox").append(con); }else{ $("#windowbox").append(con); }
+//               }
+//             },
+//             error: function (request, status, error) {
+//                alert('Request Failed Category...!'+error);
+//                 console.log('Request Failed Category...!');
+//             }
+//         }) 
+//         return false;
         
-    });  // end document ready	
+//     });  // end document ready	
        
    }
 
@@ -200,7 +164,7 @@ var con = "<a onclick=\"product("+datax[i].id+",'"+datax[i].name+"');\" href=\"#
               }
             },
             error: function (request, status, error) {
-                alert('Request Failed...! - '+error);
+                alert('Request Failed Get Series...! - '+error);
             }
         }) 
         return false;
@@ -248,7 +212,7 @@ var con = "<a onclick=\"calculator("+datax[i].id+");\" href=\"#\" class=\"list-g
 
             },
             error: function (request, status, error) {
-                alert('Request Failed...!');
+                alert('Request Failed Get Product...!');
             }
         }) 
         return false;
@@ -283,7 +247,7 @@ combo_color(pid);
 
          },
          error: function (request, status, error) {
-             alert('Request Failed...!');
+             alert('Request Failed Get Product Details...!');
          }
      }) 
      return false;
@@ -383,6 +347,7 @@ function get_cart(){
 
               var total = data.total;
               $("#gtotal").html(idr_format(parseInt(total.amount_unpublish+total.amount_publish)));
+              $(".subtotal").show();
 
             },
             error: function (request, status, error) {
@@ -420,7 +385,7 @@ function remove_cart(val){
             }else{ swal(data.error, "", "error"); }
         },
         error: function (request, status, error) {
-            alert('Request Failed...!');
+            alert('Request Failed - Remove Cart...!');
         }
     }) 
     return false;
@@ -471,7 +436,7 @@ function transaction(type=0,limit=10,storage=0){
             }
         },
         error: function (request, status, error) {
-            alert('Request Failed...!');
+            alert('Request Failed Get Transaction...!');
         }
     }) 
     return false; 
