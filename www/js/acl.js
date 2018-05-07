@@ -18,7 +18,7 @@ function otentikasi(){
             success: function(data)
             {   
               if (data.status == false){ logout(); }
-              else if (data.status == true){ category(16); category(7); }
+              else if (data.status == true){ category(7); }
             },
             error: function (request, status, error) {
                 console.log('Request Failed...!'+error);

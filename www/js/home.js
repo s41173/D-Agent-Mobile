@@ -1,8 +1,6 @@
 var api = "http://calculator.dswip.com/";  
 
 function category(param){
-       
-    alert("Saya adalah function category");
 
     localStorage.removeItem("category");
     localStorage.removeItem("catname");
@@ -31,6 +29,7 @@ function category(param){
                             "</div> </div> </div>";
                   if (param == 7){ $("#doorbox").append(con); }else{ $("#windowbox").append(con); }
               }
+              if (param == 7){ category(16); }
             },
             error: function (request, status, error) {
                alert('Request Failed Category...!'+error);
