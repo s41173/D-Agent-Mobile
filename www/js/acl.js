@@ -1,11 +1,11 @@
 // var api = "http://calculator.dswip.com/";  
 
 // setInterval(otentikasi, 3000);
-// function otentikasi(){
+function otentikasi(){
     
     $(document).ready(function(){  
             
-        alert(api);
+        alert("saya adalah otentikasi");
         // var nilai = '{ "userid":"'+localStorage.userid+'", "log":"'+localStorage.log+'", "mobile":"1" }';
         // $.ajax({
         //     type: 'POST',
@@ -26,6 +26,6 @@
 
     }); // end document ready
 
-// }
+}
 
 // ----------------------------- acl --------------------------------------------------------
