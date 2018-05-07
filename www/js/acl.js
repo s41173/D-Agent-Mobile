@@ -33,6 +33,10 @@ function otentikasi(){
 
 }
 
+function categorix(){
+    alert("Hello saya categoriescx");
+}
+
 function logout(){
 
     localStorage.removeItem("username");
